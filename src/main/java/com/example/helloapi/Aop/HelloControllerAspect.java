@@ -27,11 +27,11 @@ public class HelloControllerAspect {
         System.out.println("Before method after adding custom annotation : " + joinPoint.getSignature().getName());
     }
 
-    // @Before("execution(* com.example.helloapi.controller.HelloController.*(..))")
-    // public void logBefore(JoinPoint joinPoint) {
-    //     logger.info("AOP: Before method execution");
-    //     logger.info("🔍 [Before] Method: " + joinPoint.getSignature().getName());
-    // }
+     @Before("execution(* com.example.helloapi.controller.HelloController.*(..))")
+     public void logBeforeU(JoinPoint joinPoint) {
+         logger.info("AOP: Before method execution");
+         logger.info("\uD83D\uDD0D [Before] Method: {}", joinPoint.getSignature().getName());
+     }
 
      // Use Case 2: Measure execution time
     // @Around("execution(* com.example.helloapi.controller.HelloController.*(..))")
